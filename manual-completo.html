@@ -2239,6 +2239,14 @@ letter-spacing: 0.07em;
 margin-bottom: 0.7rem;
 }
 
+#TOC ul ul {
+display: none !important;
+}
+
+#TOC li:has(a.nav-link.active) > ul {
+display: block !important;
+}
+
 h1 {
 border-bottom: 3px solid #78c2ad;
 padding-bottom: 0.35rem;
@@ -2296,6 +2304,75 @@ line-height: 1.7;
 .quarto-title-block .quarto-title {
 font-size: 2rem;
 }
+
+
+.faq-search-wrapper {
+margin: 1.5rem 0 1rem;
+}
+#faq-search-input {
+width: 100%;
+padding: 0.6rem 1rem;
+font-size: 0.97rem;
+border: 1.5px solid #78c2ad;
+border-radius: 8px;
+outline: none;
+background-color: #fff;
+color: #333;
+transition: border-color 0.15s ease, box-shadow 0.15s ease;
+box-sizing: border-box;
+}
+#faq-search-input:focus {
+border-color: #2b7a6a;
+box-shadow: 0 0 0 3px rgba(120, 194, 173, 0.25);
+}
+#faq-search-input::placeholder {
+color: #aaa;
+}
+
+.faq-nav {
+display: flex;
+flex-wrap: wrap;
+gap: 0.45rem;
+margin-bottom: 1.8rem;
+}
+.faq-nav a {
+display: inline-block;
+padding: 0.3rem 0.85rem;
+font-size: 0.84rem;
+font-weight: 500;
+color: #2b7a6a;
+background-color: rgba(120, 194, 173, 0.12);
+border: 1.5px solid #78c2ad;
+border-radius: 20px;
+text-decoration: none;
+transition: background-color 0.15s ease, color 0.15s ease;
+white-space: nowrap;
+}
+.faq-nav a:hover {
+background-color: #78c2ad;
+color: #fff;
+}
+
+.faq-item {
+border-left: 3px solid #78c2ad;
+padding: 0.75rem 1rem 0.75rem 1.1rem;
+margin-bottom: 1rem;
+background-color: rgba(120, 194, 173, 0.05);
+border-radius: 0 6px 6px 0;
+}
+.faq-item > p:first-child {
+margin-bottom: 0.4rem;
+}
+.faq-item > p:last-child {
+margin-bottom: 0;
+}
+
+#faq-no-results {
+text-align: center;
+color: #888;
+margin: 2rem 0;
+font-style: italic;
+}
 </style>
 </head>
 
@@ -2303,7 +2380,7 @@ font-size: 2rem;
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+  <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
     <h2 id="toc-title">Contenido</h2>
    
   <ul>
@@ -2447,6 +2524,17 @@ font-size: 2rem;
   </ul></li>
   <li><a href="#relación-con-otras-secciones" id="toc-relación-con-otras-secciones" class="nav-link" data-scroll-target="#relación-con-otras-secciones">8.3 Relación con otras secciones</a></li>
   </ul></li>
+  <li><a href="#preguntas-frecuentes-faq" id="toc-preguntas-frecuentes-faq" class="nav-link" data-scroll-target="#preguntas-frecuentes-faq">9. Preguntas Frecuentes (FAQ)</a>
+  <ul class="collapse">
+  <li><a href="#faq-acceso" id="toc-faq-acceso" class="nav-link" data-scroll-target="#faq-acceso">9.1 Acceso y Cuenta</a></li>
+  <li><a href="#faq-campamentos" id="toc-faq-campamentos" class="nav-link" data-scroll-target="#faq-campamentos">9.2 Campamentos</a></li>
+  <li><a href="#faq-clubes" id="toc-faq-clubes" class="nav-link" data-scroll-target="#faq-clubes">9.3 Clubes</a></li>
+  <li><a href="#faq-usuarios" id="toc-faq-usuarios" class="nav-link" data-scroll-target="#faq-usuarios">9.4 Usuarios</a></li>
+  <li><a href="#faq-directores" id="toc-faq-directores" class="nav-link" data-scroll-target="#faq-directores">9.5 Directores</a></li>
+  <li><a href="#faq-eventos" id="toc-faq-eventos" class="nav-link" data-scroll-target="#faq-eventos">9.6 Eventos y Rúbricas</a></li>
+  <li><a href="#faq-reportes" id="toc-faq-reportes" class="nav-link" data-scroll-target="#faq-reportes">9.7 Reportes</a></li>
+  <li><a href="#faq-configuracion" id="toc-faq-configuracion" class="nav-link" data-scroll-target="#faq-configuracion">9.8 Configuración</a></li>
+  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="manual-completo.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </div>
@@ -2465,7 +2553,7 @@ font-size: 2rem;
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">27 de mayo de 2026</p>
+      <p class="date">28 de mayo de 2026</p>
     </div>
   </div>
   
@@ -4302,8 +4390,319 @@ Advertencia
 </table>
 <hr>
 <hr>
-<p><em>© Todos los derechos reservados Lira’s Prod 2026</em></p>
 </section>
+</section>
+<section id="preguntas-frecuentes-faq" class="level1">
+<h1>9. Preguntas Frecuentes (FAQ)</h1>
+<div class="faq-search-wrapper">
+  <input type="text" id="faq-search-input" placeholder="🔍 Buscar pregunta..." autocomplete="off">
+</div>
+
+<nav class="faq-nav" aria-label="Categorías FAQ">
+  <a href="#faq-acceso">Acceso y Cuenta</a>
+  <a href="#faq-campamentos">Campamentos</a>
+  <a href="#faq-clubes">Clubes</a>
+  <a href="#faq-usuarios">Usuarios</a>
+  <a href="#faq-directores">Directores</a>
+  <a href="#faq-eventos">Eventos y Rúbricas</a>
+  <a href="#faq-reportes">Reportes</a>
+  <a href="#faq-configuracion">Configuración</a>
+</nav>
+
+<p id="faq-no-results" style="display:none; text-align:center; color:#888; margin: 2rem 0;">
+  No se encontraron preguntas para &quot;<span id="faq-query-display"></span>&quot;.
+</p>
+
+<script>
+(function () {
+  function initFAQ() {
+    var input = document.getElementById('faq-search-input');
+    if (!input) return;
+    input.addEventListener('input', function () {
+      var q = this.value.toLowerCase().trim();
+      var items = document.querySelectorAll('.faq-item');
+      var sections = document.querySelectorAll('.faq-section');
+      var noResults = document.getElementById('faq-no-results');
+      var queryDisplay = document.getElementById('faq-query-display');
+
+      items.forEach(function (item) {
+        var match = !q || item.textContent.toLowerCase().includes(q);
+        item.style.display = match ? '' : 'none';
+      });
+
+      sections.forEach(function (sec) {
+        var visible = Array.from(sec.querySelectorAll('.faq-item')).filter(function (i) {
+          return i.style.display !== 'none';
+        }).length;
+        sec.style.display = visible > 0 ? '' : 'none';
+      });
+
+      if (queryDisplay) queryDisplay.textContent = this.value;
+      var anyVisible = Array.from(items).some(function (i) { return i.style.display !== 'none'; });
+      noResults.style.display = (q && !anyVisible) ? 'block' : 'none';
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFAQ);
+  } else {
+    initFAQ();
+  }
+})();
+</script>
+<hr>
+<section id="faq-acceso" class="level2 faq-section">
+<h2 class="anchored" data-anchor-id="faq-acceso">9.1 Acceso y Cuenta</h2>
+<div class="faq-item">
+<p><strong>¿Cómo inicio sesión en Camp Manager?</strong></p>
+<p>Accede a <a href="https://campmanager.lirasprod.com/">https://campmanager.lirasprod.com/</a>, ingresa tu usuario y contraseña en el formulario y haz clic en <strong>Login</strong>. El campo “Email” acepta el nombre de usuario.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Qué hago si el sistema rechaza mis credenciales?</strong></p>
+<p>Verifica que no haya errores de tipeo en usuario y contraseña. Si el error persiste, solicita a un administrador que resetee tu contraseña desde el módulo <strong>Usuarios</strong>. Al siguiente ingreso el sistema te pedirá definir una contraseña nueva.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Por cuánto tiempo dura mi sesión activa?</strong></p>
+<p>La sesión tiene una duración de <strong>7 días</strong>. Pasado ese tiempo el sistema redirige automáticamente a la pantalla de login para volver a autenticarse.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Cómo cambio de campamento sin cerrar sesión?</strong></p>
+<p>En la barra lateral izquierda, haz clic en el ícono de <strong>flechas</strong> (↔︎) junto al nombre del campamento activo. Se abrirá el diálogo “Seleccionar Campamento” para elegir otro sin interrumpir la sesión.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Cómo cambio mi contraseña?</strong></p>
+<p>Si es tu primer acceso o un administrador reseteó tu cuenta, el sistema te solicitará cambiar la contraseña al ingresar. Si deseas cambiarla en otro momento, pide a un administrador que reinicie tu contraseña desde <strong>Usuarios → Resetear contraseña</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El primer acceso siempre requiere cambio de contraseña; no se puede omitir este paso.</p>
+</div>
+</div>
+</div>
+</section>
+<hr>
+<section id="faq-campamentos" class="level2 faq-section">
+<h2 class="anchored" data-anchor-id="faq-campamentos">9.2 Campamentos</h2>
+<div class="faq-item">
+<p><strong>¿Cómo creo un nuevo campamento?</strong></p>
+<p>Ve al módulo <strong>Campamentos</strong> y haz clic en <strong>+ Crear Campamento</strong>. Completa nombre, fechas y demás campos del formulario, luego guarda. El nuevo campamento quedará disponible en el selector de campamento activo.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Puedo editar el nombre o las fechas de un campamento después de crearlo?</strong></p>
+<p>Sí. En la lista de campamentos, haz clic en el ícono de edición del campamento. Modifica los campos necesarios y guarda los cambios.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Qué significa “publicar calificaciones” en un campamento?</strong></p>
+<p>Publicar las calificaciones hace que los resultados sean visibles para los directores en su portal. Mientras las calificaciones no estén publicadas, los directores no pueden ver los puntajes de sus clubes.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Puedo despublicar las calificaciones después de haberlas publicado?</strong></p>
+<p>Sí, la acción de publicar/despublicar es reversible. Desde la vista del campamento puedes alternar el estado en cualquier momento.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Advertencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Despublicar oculta los resultados inmediatamente para todos los directores del campamento activo.</p>
+</div>
+</div>
+</div>
+<div class="faq-item">
+<p><strong>¿Cómo subo o cambio el logo de un campamento?</strong></p>
+<p>Abre el campamento en modo edición y busca el campo de logo. Selecciona un archivo de imagen desde tu equipo y guarda. El logo aparecerá en los reportes y en la cabecera del portal de directores.</p>
+</div>
+</section>
+<hr>
+<section id="faq-clubes" class="level2 faq-section">
+<h2 class="anchored" data-anchor-id="faq-clubes">9.3 Clubes</h2>
+<div class="faq-item">
+<p><strong>¿Cómo agrego un nuevo club al campamento activo?</strong></p>
+<p>Ve al módulo <strong>Clubes</strong> y haz clic en <strong>+ Agregar Club</strong>. Ingresa el nombre del club y los demás datos requeridos. El club queda vinculado automáticamente al campamento activo seleccionado.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Puedo importar múltiples clubes a la vez desde Excel?</strong></p>
+<p>Sí. En el módulo <strong>Clubes</strong> utiliza la opción <strong>Importar</strong> y sube un archivo <code>.xlsx</code> o <code>.csv</code>. El sistema mostrará un asistente de mapeo de columnas para asociar los encabezados de tu archivo con los campos del sistema.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Descarga la plantilla de ejemplo antes de preparar tu archivo para asegurarte de incluir todas las columnas requeridas.</p>
+</div>
+</div>
+</div>
+<div class="faq-item">
+<p><strong>¿Qué columnas se requieren en el archivo de importación de clubes?</strong></p>
+<p>Como mínimo se requiere el <strong>nombre del club</strong>. Columnas opcionales incluyen número, afiliación y zona. El asistente de mapeo acepta variantes comunes de nombres de columna (por ejemplo <code>club</code>, <code>nombre</code>, <code>name</code>).</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Cómo elimino un club del campamento?</strong></p>
+<p>En la lista de clubes, haz clic en el ícono de eliminar del club correspondiente. El sistema aplicará un borrado lógico (soft-delete); el club no aparecerá en listas ni reportes pero sus datos históricos se conservan.</p>
+</div>
+</section>
+<hr>
+<section id="faq-usuarios" class="level2 faq-section">
+<h2 class="anchored" data-anchor-id="faq-usuarios">9.4 Usuarios</h2>
+<div class="faq-item">
+<p><strong>¿Cómo invito a un nuevo juez o administrador al sistema?</strong></p>
+<p>Ve al módulo <strong>Usuarios</strong> y haz clic en <strong>Invitar Usuario</strong>. Ingresa el correo electrónico y selecciona el rol. El usuario recibirá un correo con sus credenciales de primer acceso.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Cómo reseteo la contraseña de un usuario?</strong></p>
+<p>En la lista de usuarios, localiza al usuario y usa la opción <strong>Resetear contraseña</strong>. El sistema generará una contraseña temporal y marcará la cuenta con <code>firstTime: true</code>, de modo que el usuario deberá cambiarla en su próximo ingreso.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Qué roles existen en Camp Manager?</strong></p>
+<p>Los roles principales son <strong>Administrador</strong> (acceso total al panel web) y <strong>Juez</strong> (acceso a la app móvil para calificar). Los directores tienen acceso exclusivo a su portal y se gestionan desde el módulo <strong>Directores</strong>.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Puedo eliminar un usuario del sistema?</strong></p>
+<p>El módulo de usuarios permite desactivar cuentas. Consulta con el administrador del sistema si necesitas una eliminación permanente, ya que los registros de calificaciones están vinculados al usuario.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Eliminar permanentemente un usuario puede afectar el historial de calificaciones registradas con su cuenta.</p>
+</div>
+</div>
+</div>
+</section>
+<hr>
+<section id="faq-directores" class="level2 faq-section">
+<h2 class="anchored" data-anchor-id="faq-directores">9.5 Directores</h2>
+<div class="faq-item">
+<p><strong>¿Cómo invito a un director al portal?</strong></p>
+<p>Ve al módulo <strong>Directores</strong> y usa la opción <strong>Invitar Director</strong>. Ingresa el correo electrónico y asóciale un club. El director recibirá acceso al portal donde podrá consultar los resultados de su club.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Qué puede ver y hacer un director en su portal?</strong></p>
+<p>Un director puede ver las calificaciones y reportes del club que tiene asignado, una vez que el administrador haya publicado las calificaciones del campamento. No tiene acceso al panel de administración.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Puedo importar múltiples directores a la vez?</strong></p>
+<p>Sí. Desde el módulo <strong>Directores</strong> utiliza la opción de importación masiva. El proceso es similar al de clubes: sube un archivo <code>.xlsx</code> o <code>.csv</code> y mapea las columnas en el asistente.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Asegúrate de que los clubes ya estén creados antes de importar directores, ya que la importación puede vincular directores a clubes existentes.</p>
+</div>
+</div>
+</div>
+</section>
+<hr>
+<section id="faq-eventos" class="level2 faq-section">
+<h2 class="anchored" data-anchor-id="faq-eventos">9.6 Eventos y Rúbricas</h2>
+<div class="faq-item">
+<p><strong>¿Cómo creo un nuevo evento?</strong></p>
+<p>Ve al módulo <strong>Eventos</strong> y haz clic en <strong>+ Nuevo Evento</strong>. Selecciona el tipo de evento, asigna un nombre y configura los parámetros necesarios. Los eventos quedan vinculados al campamento activo.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Cómo asigno jueces a un evento?</strong></p>
+<p>Dentro de un evento, accede a la sección de asignación de jueces. Selecciona los usuarios con rol <strong>Juez</strong> que participarán en la evaluación. Los jueces verán el evento en su aplicación móvil.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Qué es una rúbrica y cómo se configura?</strong></p>
+<p>Una rúbrica define los criterios de evaluación y sus ponderaciones para un evento. Se configura desde la sección <strong>Rúbricas</strong> dentro del evento: agrega los criterios, asigna puntajes máximos y define categorías de calificación.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Puedo modificar una rúbrica después de que los jueces ya hayan calificado?</strong></p>
+<p>Se puede editar la rúbrica, pero cualquier cambio en ponderaciones o criterios afectará los cálculos de calificaciones ya registradas.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Advertencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Modificar una rúbrica con calificaciones existentes puede alterar los reportes y rankings. Se recomienda hacerlo solo antes de iniciar la evaluación o en coordinación con todos los evaluadores.</p>
+</div>
+</div>
+</div>
+</section>
+<hr>
+<section id="faq-reportes" class="level2 faq-section">
+<h2 class="anchored" data-anchor-id="faq-reportes">9.7 Reportes</h2>
+<div class="faq-item">
+<p><strong>¿Cómo accedo a los reportes del campamento?</strong></p>
+<p>Ve al módulo <strong>Reportes</strong> en la barra lateral. Los reportes disponibles se muestran en un menú de dashboards. Todos los reportes corresponden al campamento activo seleccionado.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Qué reporte muestra el ranking general por categoría?</strong></p>
+<p>El reporte <strong>Ranking</strong> (o <strong>Ranking Report</strong>) muestra la clasificación de clubes ordenados por puntaje dentro de cada categoría de evaluación. Es el reporte principal para resultados finales.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Puedo exportar o imprimir un reporte?</strong></p>
+<p>Sí. Desde la vista de cualquier reporte utiliza la opción de impresión del navegador (<code>Ctrl + P</code> / <code>Cmd + P</code>) o el botón de exportar si está disponible en ese reporte. El diseño está optimizado para impresión.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Los reportes se actualizan en tiempo real?</strong></p>
+<p>Los reportes reflejan los datos al momento de cargar la página. Para obtener los resultados más recientes, recarga el reporte. No hay actualización automática en segundo plano.</p>
+</div>
+</section>
+<hr>
+<section id="faq-configuracion" class="level2 faq-section">
+<h2 class="anchored" data-anchor-id="faq-configuracion">9.8 Configuración</h2>
+<div class="faq-item">
+<p><strong>¿Cómo configuro una nueva organización?</strong></p>
+<p>Ve al módulo <strong>Configuración</strong> y selecciona la sección <strong>Organizaciones</strong>. Haz clic en <strong>+ Nueva Organización</strong>, completa el nombre y los datos requeridos, y guarda. Las organizaciones agrupan afiliaciones y zonas dentro del sistema.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Qué son las afiliaciones o zonas y cómo se usan?</strong></p>
+<p>Las afiliaciones (también llamadas zonas) son subdivisiones dentro de una organización que permiten agrupar clubes por región o distrito. Se asignan a los clubes al momento de crearlos o editarlos, y pueden usarse como filtro en los reportes.</p>
+</div>
+<div class="faq-item">
+<p><strong>¿Puedo tener múltiples organizaciones en el sistema?</strong></p>
+<p>Sí. El sistema admite múltiples organizaciones, cada una con sus propias afiliaciones. Cada campamento puede estar asociado a una organización específica.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La configuración de organizaciones es global; afecta a todos los campamentos del sistema, no solo al campamento activo.</p>
+</div>
+</div>
+</div>
+</section>
+<hr>
+<p><em>© Todos los derechos reservados Lira’s Prod 2026</em></p>
 </section>
 
 </main>
