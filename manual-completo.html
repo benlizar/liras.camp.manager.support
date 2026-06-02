@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
 width: 0.8em;
 margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
 }
+
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+}
+pre.numberSource { margin-left: 3em; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -2453,6 +2488,14 @@ font-style: italic;
   <li><a href="#agregar-rúbrica-a-un-evento-existente" id="toc-agregar-rúbrica-a-un-evento-existente" class="nav-link" data-scroll-target="#agregar-rúbrica-a-un-evento-existente">6.4 Agregar rúbrica a un evento existente</a></li>
   <li><a href="#asignar-juez-a-una-rúbrica" id="toc-asignar-juez-a-una-rúbrica" class="nav-link" data-scroll-target="#asignar-juez-a-una-rúbrica">6.5 Asignar juez a una rúbrica</a></li>
   <li><a href="#desasignar-jueces-de-un-evento" id="toc-desasignar-jueces-de-un-evento" class="nav-link" data-scroll-target="#desasignar-jueces-de-un-evento">6.6 Desasignar jueces de un evento</a></li>
+  <li><a href="#importar-eventos-con-ayuda-de-ia" id="toc-importar-eventos-con-ayuda-de-ia" class="nav-link" data-scroll-target="#importar-eventos-con-ayuda-de-ia">6.7 Importar eventos con ayuda de IA</a>
+  <ul class="collapse">
+  <li><a href="#paso-1-reúne-los-instructivos" id="toc-paso-1-reúne-los-instructivos" class="nav-link" data-scroll-target="#paso-1-reúne-los-instructivos">Paso 1 — Reúne los instructivos</a></li>
+  <li><a href="#paso-2-abre-una-ia-con-visión-y-pega-el-prompt" id="toc-paso-2-abre-una-ia-con-visión-y-pega-el-prompt" class="nav-link" data-scroll-target="#paso-2-abre-una-ia-con-visión-y-pega-el-prompt">Paso 2 — Abre una IA con visión y pega el prompt</a></li>
+  <li><a href="#paso-3-envía-las-imágenes-una-por-una" id="toc-paso-3-envía-las-imágenes-una-por-una" class="nav-link" data-scroll-target="#paso-3-envía-las-imágenes-una-por-una">Paso 3 — Envía las imágenes una por una</a></li>
+  <li><a href="#paso-4-importa-el-json-al-sistema" id="toc-paso-4-importa-el-json-al-sistema" class="nav-link" data-scroll-target="#paso-4-importa-el-json-al-sistema">Paso 4 — Importa el JSON al sistema</a></li>
+  <li><a href="#json-de-referencia-estructura-completa" id="toc-json-de-referencia-estructura-completa" class="nav-link" data-scroll-target="#json-de-referencia-estructura-completa">JSON de referencia (estructura completa)</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#reportes" id="toc-reportes" class="nav-link" data-scroll-target="#reportes">7. Reportes</a>
   <ul class="collapse">
@@ -2553,7 +2596,7 @@ font-style: italic;
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">28 de mayo de 2026</p>
+      <p class="date">1 de junio de 2026</p>
     </div>
   </div>
   
@@ -3745,7 +3788,294 @@ Tip
 </div>
 </div>
 <hr>
+</section>
+<section id="importar-eventos-con-ayuda-de-ia" class="level2">
+<h2 class="anchored" data-anchor-id="importar-eventos-con-ayuda-de-ia">6.7 Importar eventos con ayuda de IA</h2>
+<p>Cuando el campamento ya tiene instructivos o manuales de sus eventos (ya sea en papel o en PDF), puedes fotografiarlos o capturar pantalla y usar una IA con visión para convertirlos en JSON automáticamente. Luego importas todos los eventos de una sola vez, sin tipear cada uno a mano.</p>
 <hr>
+<section id="paso-1-reúne-los-instructivos" class="level3">
+<h3 class="anchored" data-anchor-id="paso-1-reúne-los-instructivos">Paso 1 — Reúne los instructivos</h3>
+<p>Prepara una imagen por cada evento que quieras cargar:</p>
+<ul>
+<li>Toma una foto con el celular al instructivo impreso, o</li>
+<li>Captura pantalla del PDF o documento digital</li>
+</ul>
+<p>Cada imagen debe mostrar claramente el <strong>nombre del evento</strong>, los <strong>criterios de evaluación</strong> (rubros) y el <strong>puntaje de cada uno</strong>.</p>
+<hr>
+</section>
+<section id="paso-2-abre-una-ia-con-visión-y-pega-el-prompt" class="level3">
+<h3 class="anchored" data-anchor-id="paso-2-abre-una-ia-con-visión-y-pega-el-prompt">Paso 2 — Abre una IA con visión y pega el prompt</h3>
+<p>Abre una de estas IAs que soportan análisis de imágenes:</p>
+<ul>
+<li><strong>ChatGPT</strong> (GPT-4o) → <a href="https://chat.openai.com">chat.openai.com</a></li>
+<li><strong>Claude</strong> → <a href="https://claude.ai">claude.ai</a></li>
+<li><strong>Gemini</strong> → <a href="https://gemini.google.com">gemini.google.com</a></li>
+</ul>
+<p>Copia el siguiente prompt completo y pégalo como <strong>primer mensaje</strong> de la conversación (sin adjuntar ninguna imagen todavía):</p>
+<pre><code>Eres un asistente que lee instructivos de eventos de campamento y los convierte en objetos JSON para importar en Camp Manager, un sistema de gestión de campamentos.
+
+Por cada imagen que te envíe, extrae la información del evento y devuelve ÚNICAMENTE un objeto JSON con este formato exacto:
+
+{
+  &quot;name&quot;: &quot;Nombre del evento&quot;,
+  &quot;event_type&quot;: &quot;Camp&quot;,
+  &quot;evaluation_type&quot;: &quot;Por Club&quot;,
+  &quot;event_category&quot;: &quot;Recreativos&quot;,
+  &quot;maxPointEvents&quot;: 100,
+  &quot;status&quot;: true,
+  &quot;rubricsCustomOrder&quot;: false,
+  &quot;rubrics&quot;: [
+    {
+      &quot;name&quot;: &quot;Nombre del criterio&quot;,
+      &quot;maxPoints&quot;: 60,
+      &quot;includedInSum&quot;: true,
+      &quot;allowNegative&quot;: false,
+      &quot;instructions&quot;: &quot;Instrucciones para el juez&quot;,
+      &quot;displayedOrder&quot;: 1
+    },
+    {
+      &quot;name&quot;: &quot;Segundo criterio&quot;,
+      &quot;maxPoints&quot;: 40,
+      &quot;includedInSum&quot;: true,
+      &quot;allowNegative&quot;: false,
+      &quot;instructions&quot;: &quot;&quot;,
+      &quot;displayedOrder&quot;: 2
+    }
+  ]
+}
+
+---
+
+DESCRIPCIÓN DE CADA CAMPO:
+
+- name (texto): Nombre del evento tal como aparece en el instructivo.
+
+- event_type (texto): Fase del evento. Elige EXACTAMENTE uno de los siguientes valores:
+    &quot;Pre-Camp&quot;   → actividad que ocurre antes del inicio del campamento
+    &quot;Camp&quot;       → actividad regular durante el campamento (usa este si no queda claro)
+    &quot;Inspeccion&quot; → inspección de cabañas o del club
+
+- evaluation_type (texto): Forma de evaluar. Elige EXACTAMENTE uno de:
+    &quot;Por Club&quot; → cada club se evalúa individualmente (usa este si no queda claro)
+    &quot;Por Zona&quot; → las calificaciones se promedian por zona geográfica
+
+- event_category (texto): Categoría temática del evento. Elige EXACTAMENTE uno de:
+    &quot;Eventos Espirituales&quot; → culto, devoción, estudio bíblico, adoración
+    &quot;Vocacionales&quot;         → vocación, misión
+    &quot;Eventos campestres&quot;   → actividades al aire libre propias del campamento
+    &quot;Recreativos&quot;          → deportes, juegos, actividades físicas
+    &quot;Alcance Social&quot;       → servicio comunitario, alcance exterior
+    &quot;Salvación y servicio&quot; → evangelismo, servicio espiritual
+    &quot;Organización&quot;         → disciplina, orden, presentación del club
+    &quot;Pre-requisitos&quot;       → requisitos previos que el club debe cumplir
+    &quot;Pre-Camporee&quot;         → actividades clasificatorias previas al camporee
+    &quot;Eventos libres&quot;       → sin categoría fija o de libre elección
+
+- maxPointEvents (número entero): Puntaje total máximo del evento.
+
+- status (booleano): Usa siempre true.
+
+- rubricsCustomOrder (booleano): Usa false, a menos que el instructivo indique un orden específico numerado para los criterios.
+
+- rubrics (array): Lista de criterios de evaluación.
+    - name: Nombre del criterio o rubro.
+    - maxPoints: Puntaje máximo de ese criterio.
+    - includedInSum: true si ese criterio suma al total del evento; false si es referencial.
+    - allowNegative: true solo si el criterio puede restar puntos al total.
+    - instructions: Copia textual de las instrucciones para el juez que aparecen en el instructivo. Deja &quot;&quot; si no hay instrucciones.
+    - displayedOrder: Número de orden del criterio (empieza en 1).
+
+---
+
+REGLAS OBLIGATORIAS:
+
+1. Los valores de event_type, evaluation_type y event_category deben coincidir EXACTAMENTE con las opciones listadas (respeta mayúsculas, minúsculas y tildes).
+2. La suma de maxPoints de todos los rubros donde includedInSum es true DEBE ser igual a maxPointEvents.
+3. NO incluyas los campos &quot;camp&quot; ni &quot;leadJudge&quot;. El sistema los agrega automáticamente.
+4. Responde únicamente con el objeto JSON, sin texto adicional ni explicaciones.
+5. Cuando yo escriba la palabra &quot;LISTO&quot;, combina todos los objetos JSON que generaste en este chat dentro de un array [ {...}, {...}, ... ] y devuelve ese array completo.</code></pre>
+<hr>
+</section>
+<section id="paso-3-envía-las-imágenes-una-por-una" class="level3">
+<h3 class="anchored" data-anchor-id="paso-3-envía-las-imágenes-una-por-una">Paso 3 — Envía las imágenes una por una</h3>
+<p>Una vez que la IA haya confirmado que entendió el prompt:</p>
+<ol type="1">
+<li>Adjunta la <strong>fotografía o captura</strong> del primer instructivo y envíala</li>
+<li>La IA devolverá el objeto JSON de ese evento — revísalo para confirmar que los campos sean correctos</li>
+<li><strong>Copia el JSON</strong> en un bloc de notas o editor de texto</li>
+<li>Repite el proceso con el siguiente instructivo</li>
+<li>Cuando hayas procesado todos los eventos, escribe <strong>“LISTO”</strong> — la IA combinará todos los objetos en un array</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Revisa cada JSON antes de acumular: verifica que <code>event_category</code> sea la categoría correcta y que los <code>maxPoints</code> de los rubros sumen exactamente el <code>maxPointEvents</code> del evento.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="paso-4-importa-el-json-al-sistema" class="level3">
+<h3 class="anchored" data-anchor-id="paso-4-importa-el-json-al-sistema">Paso 4 — Importa el JSON al sistema</h3>
+<ol type="1">
+<li>Copia el array completo <code>[{...}, {...}, ...]</code> que devolvió la IA</li>
+<li>Pégalo en un editor de texto y guárdalo como un archivo con extensión <code>.json</code> (por ejemplo: <code>eventos-camporee-2025.json</code>)</li>
+<li>En Camp Manager, ve a <strong>Eventos</strong> en el menú lateral</li>
+<li>Haz clic en el botón <strong>“Importar”</strong></li>
+<li>Selecciona el archivo <code>.json</code> que guardaste</li>
+<li>Revisa el resumen: el sistema muestra cuántos eventos serán creados y si alguno tuvo errores de nombre</li>
+<li>Haz clic en <strong>“Importar X eventos”</strong> para confirmar</li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Advertencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Los valores de <code>event_type</code>, <code>evaluation_type</code> y <code>event_category</code> deben coincidir <strong>exactamente</strong> con los nombres del sistema, incluyendo tildes y mayúsculas. Si alguno no coincide, ese evento será omitido y aparecerá como error en el resumen de importación.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Los eventos de tipo <strong><code>Inspeccion</code></strong> tienen comportamiento especial: no se incluyen en los reportes de calificaciones generales y se procesan por separado en el reporte de inspecciones.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="json-de-referencia-estructura-completa" class="level3">
+<h3 class="anchored" data-anchor-id="json-de-referencia-estructura-completa">JSON de referencia (estructura completa)</h3>
+<p>Usa esto como plantilla si necesitas crear o editar el JSON manualmente:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">{</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Nombre del Evento&quot;</span><span class="fu">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;event_type&quot;</span><span class="fu">:</span> <span class="st">&quot;Camp&quot;</span><span class="fu">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;evaluation_type&quot;</span><span class="fu">:</span> <span class="st">&quot;Por Club&quot;</span><span class="fu">,</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;event_category&quot;</span><span class="fu">:</span> <span class="st">&quot;Recreativos&quot;</span><span class="fu">,</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;maxPointEvents&quot;</span><span class="fu">:</span> <span class="dv">100</span><span class="fu">,</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;status&quot;</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;rubricsCustomOrder&quot;</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;rubrics&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Primer criterio de evaluación&quot;</span><span class="fu">,</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;maxPoints&quot;</span><span class="fu">:</span> <span class="dv">60</span><span class="fu">,</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;includedInSum&quot;</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;allowNegative&quot;</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;instructions&quot;</span><span class="fu">:</span> <span class="st">&quot;Instrucciones opcionales para el juez&quot;</span><span class="fu">,</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;displayedOrder&quot;</span><span class="fu">:</span> <span class="dv">1</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Segundo criterio de evaluación&quot;</span><span class="fu">,</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;maxPoints&quot;</span><span class="fu">:</span> <span class="dv">40</span><span class="fu">,</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;includedInSum&quot;</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;allowNegative&quot;</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;instructions&quot;</span><span class="fu">:</span> <span class="st">&quot;&quot;</span><span class="fu">,</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;displayedOrder&quot;</span><span class="fu">:</span> <span class="dv">2</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="ot">]</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 23%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Campo</th>
+<th>Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>name</code></td>
+<td>texto</td>
+<td>Nombre del evento</td>
+</tr>
+<tr class="even">
+<td><code>event_type</code></td>
+<td>texto</td>
+<td><code>&quot;Pre-Camp&quot;</code>, <code>&quot;Camp&quot;</code> o <code>&quot;Inspeccion&quot;</code></td>
+</tr>
+<tr class="odd">
+<td><code>evaluation_type</code></td>
+<td>texto</td>
+<td><code>&quot;Por Club&quot;</code> o <code>&quot;Por Zona&quot;</code></td>
+</tr>
+<tr class="even">
+<td><code>event_category</code></td>
+<td>texto</td>
+<td>Una de las 10 categorías del sistema</td>
+</tr>
+<tr class="odd">
+<td><code>maxPointEvents</code></td>
+<td>número</td>
+<td>Puntaje máximo total del evento</td>
+</tr>
+<tr class="even">
+<td><code>status</code></td>
+<td>booleano</td>
+<td><code>true</code> = activo</td>
+</tr>
+<tr class="odd">
+<td><code>rubricsCustomOrder</code></td>
+<td>booleano</td>
+<td><code>true</code> activa ordenamiento manual de rubros</td>
+</tr>
+<tr class="even">
+<td><code>rubrics[].name</code></td>
+<td>texto</td>
+<td>Nombre del criterio/rubro</td>
+</tr>
+<tr class="odd">
+<td><code>rubrics[].maxPoints</code></td>
+<td>número</td>
+<td>Puntaje máximo del criterio</td>
+</tr>
+<tr class="even">
+<td><code>rubrics[].includedInSum</code></td>
+<td>booleano</td>
+<td><code>true</code> = cuenta en el total del evento</td>
+</tr>
+<tr class="odd">
+<td><code>rubrics[].allowNegative</code></td>
+<td>booleano</td>
+<td><code>true</code> = puede restar puntos</td>
+</tr>
+<tr class="even">
+<td><code>rubrics[].instructions</code></td>
+<td>texto</td>
+<td>Guía para el juez al calificar</td>
+</tr>
+<tr class="odd">
+<td><code>rubrics[].displayedOrder</code></td>
+<td>número</td>
+<td>Orden de visualización (empieza en 1)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<hr>
+</section>
 </section>
 </section>
 <section id="reportes" class="level1">
